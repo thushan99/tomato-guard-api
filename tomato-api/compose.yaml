@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  api_service:
+    image: "spring-boot-dc3:v1"
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - tomato_lk_network
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: "mysql:latest"
+    container_name: "mysql-service"
+    restart: always
+    ports:
+      - 3306:3306
+    networks:
+      - tomato_lk_network
+    environment:
+      MYSQL_ROOT_PASSWORD: 0769
+networks:
+  tomato_lk_network:

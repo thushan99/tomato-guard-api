@@ -1,0 +1,14 @@
+# Model files
+vgg16/*.h5
+yolov8/*.pt
+mlModels/*.pkl
+
+# IDE & OS files
+.idea/
+.vscode/
+*.iml
+*.log
+
+# Build directories
+/build/
+/dist/
